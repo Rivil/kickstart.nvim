@@ -1,6 +1,7 @@
 return {
   'ThePrimeagen/harpoon',
   branch = 'harpoon2',
+  dependencies = { 'nvim-lua/plenary.nvim' },
   opts = {
     menu = {
       width = vim.api.nvim_win_get_width(0) - 4,
@@ -12,9 +13,12 @@ return {
   keys = function()
     local keys = {
       {
+
         '<leader>H',
         function()
-          require('harpoon'):list():add()
+          local harpoon = require 'harpoon'
+          harpoon:setup()
+          harpoon:list():add()
         end,
         desc = 'Harpoon File',
       },
@@ -30,7 +34,7 @@ return {
 
     for i = 1, 5 do
       table.insert(keys, {
-        '<leader>' .. i,
+        '<leader>h' .. i,
         function()
           require('harpoon'):list():select(i)
         end,
