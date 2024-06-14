@@ -2,12 +2,21 @@ return {
   'akinsho/bufferline.nvim',
   version = '*',
   dependencies = 'nvim-tree/nvim-web-devicons',
+  keys = {
+    { '<leader>bp', '<Cmd>BufferLineTogglePin<CR>', desc = 'Toggle Pin' },
+    { '<leader>bP', '<Cmd>BufferLineGroupClose ungrouped<CR>', desc = 'Delete Non-Pinned Buffers' },
+    { '<leader>bo', '<Cmd>BufferLineCloseOthers<CR>', desc = 'Delete Other Buffers' },
+    { '<leader>br', '<Cmd>BufferLineCloseRight<CR>', desc = 'Delete Buffers to the Right' },
+    { '<leader>bl', '<Cmd>BufferLineCloseLeft<CR>', desc = 'Delete Buffers to the Left' },
+    { '<S-h>', '<cmd>BufferLineCyclePrev<cr>', desc = 'Prev Buffer' },
+    { '<S-l>', '<cmd>BufferLineCycleNext<cr>', desc = 'Next Buffer' },
+    { '[b', '<cmd>BufferLineCyclePrev<cr>', desc = 'Prev Buffer' },
+    { ']b', '<cmd>BufferLineCycleNext<cr>', desc = 'Next Buffer' },
+    { '[B', '<cmd>BufferLineMovePrev<cr>', desc = 'Move buffer prev' },
+    { ']B', '<cmd>BufferLineMoveNext<cr>', desc = 'Move buffer next' },
+  },
   opts = {
     options = {
-      function()
-        local bufferline = require 'bufferline'
-        style_preset = bufferline.style_preset.default -- or bufferline.style_preset.minimal,
-      end,
       mode = 'buffers', -- set to "tabs" to only show tabpages instead
       themable = true, -- allows highlight groups to be overriden i.e. sets highlights as default
       numbers = 'buffer_id',
