@@ -1,6 +1,6 @@
 return {
   'akinsho/bufferline.nvim',
-  event = 'VimEnter',
+  event = 'BufWinEnter',
   version = '*',
   dependencies = 'nvim-tree/nvim-web-devicons',
   keys = {
@@ -9,6 +9,7 @@ return {
     { '<leader>To', '<Cmd>BufferLineCloseOthers<CR>', desc = 'Delete Other Buffers' },
     { '<leader>Tr', '<Cmd>BufferLineCloseRight<CR>', desc = 'Delete Buffers to the Right' },
     { '<leader>Tl', '<Cmd>BufferLineCloseLeft<CR>', desc = 'Delete Buffers to the Left' },
+    { '<leader>Tc', '<Cmd>bdelete!<CR>', desc = 'Close current buffer' },
     { '<S-h>', '<cmd>BufferLineCyclePrev<cr>', desc = 'Prev Buffer' },
     { '<S-l>', '<cmd>BufferLineCycleNext<cr>', desc = 'Next Buffer' },
     { '[b', '<cmd>BufferLineCyclePrev<cr>', desc = 'Prev Buffer' },
